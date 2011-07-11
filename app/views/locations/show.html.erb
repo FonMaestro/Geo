@@ -1,0 +1,81 @@
+
+<div style="float:left;margin:30px 0 0 150px">
+
+<p>
+  <strong>Addres:</strong>
+  <%= @location.addres %>
+</p>
+<p>
+  <strong>Latitude:</strong>
+  <%= @location.latitude %>
+</p>
+<p>
+  <strong>Longitude:</strong>
+  <%= @location.longitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @location.longitude %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @location.country  %>
+</p>
+
+<p>
+  <strong>Country Code:</strong>
+  <%= @location.country_code %>
+</p>
+
+<p style="margin:20px 0 0 0;font-weight: bold;border:1px solid grey;padding:5px;width: 178px;">
+  <%= link_to "Edit", edit_location_path(@location) %> |
+  <%= link_to "Destroy", @location, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", locations_path %>  |
+  <%= link_to "IP", ip_location_url(@location) %>
+</p>
+
+<div id="form" style="margin-top:30px">
+  <%= form_tag 'calculate' do %>
+      <label for="location_id">Choose a locate</label>
+      <br>
+      <%= select_tag "location_id", options_from_collection_for_select(@locations,"id","addres") %>
+      <%= hidden_field_tag "id", @location.id %>
+      <%= submit_tag "CALCULATE" %>
+  <%end%>
+</div>
+
+</div>
+
+<div style="float:right;margin: 40px 500px 0 0;clear:right;width: 305px;height: 305px;">
+  <%= image_tag "http://maps.google.com/maps/api/staticmap?size=300x300&sensor=false&zoom=16&markers=#{@location.latitude}%2C#{@location.longitude}" %>
+</div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+
+
+      <%#*$("#1").dialog(%>
+      <%#*{%>
+        <%#*modal:true,%>
+
+        <%#*title:"Ejemplo",%>
+
+        <%#*height:400,%>
+        <%#*width:400%>
+
+      <%#*});%>
+
+
+  });
+
+
+</script>
+
+<style type="text/css">
+  img{border:1px solid black;padding:3px}
+</style>

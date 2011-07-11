@@ -1,0 +1,15 @@
+one:
+  addres: MyString
+  latitude: 1.5
+  longitude: 1.5
+  city: MyString
+  country: MyString
+  country_code: MyString
+
+two:
+  addres: MyString
+  latitude: 1.5
+  longitude: 1.5
+  city: MyString
+  country: MyString
+  country_code: MyString

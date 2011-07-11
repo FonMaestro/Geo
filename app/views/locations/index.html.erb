@@ -1,0 +1,29 @@
+
+<h1>Locations</h1>
+
+<h2><%= link_to "PETITION-IP", locations_petition_ip_url %></h2>
+
+<table>
+  <tr>
+    <th>Addres</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+  </tr>
+  <% for location in @locations %>
+    <tr>
+      <td><%= location.addres %></td>
+      <td><%= location.latitude %></td>
+      <td><%= location.longitude %></td>
+      <td><%= link_to "Show", location %></td>
+      <td><%= link_to "Edit", edit_location_path(location) %></td>
+      <td><%= link_to "Destroy", location, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div id="paginate" style="margin-top:20px;border:1px solid black;color:blue;padding:3px;width:180px">
+<%= will_paginate @locations %>
+</div>
+
+<p><%= link_to "New Location", new_location_path %></p>
+

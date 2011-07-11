@@ -1,0 +1,14 @@
+
+
+<h1><%= "calculate" %></h1>
+
+
+<% if @distance %>
+  <div>
+    <p>
+        From <strong>"<%= @location.addres %>"</strong>
+        to <strong>"<%= @location_2.addres %>"</strong> there are
+        <strong><%= pluralize @distance, "km", "kms" %> </strong>
+    </p>
+  </div>
+<%  end %>
