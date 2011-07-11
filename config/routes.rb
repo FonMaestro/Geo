@@ -8,6 +8,7 @@ Geo::Application.routes.draw do
     get :ip , :on => :member
     get :lerele, :on => :collection
   end
+
   
 
 
