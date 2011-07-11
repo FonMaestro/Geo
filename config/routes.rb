@@ -5,6 +5,7 @@ Geo::Application.routes.draw do
 
 
   resources :locations do
+
     get :ip , :on => :member
     get :lerele, :on => :collection
   end
